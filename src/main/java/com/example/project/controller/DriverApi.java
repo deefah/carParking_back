@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,7 @@ import com.example.project.repository.DriverRepo;
 
 @RestController
 @RequestMapping("/driver")
+@CrossOrigin("http://localhost:3000")
 
 public class DriverApi {
 
@@ -93,6 +95,7 @@ public class DriverApi {
                 driver2.setFirstName(driver.getFirstName());
                 driver2.setLastName(driver.getLastName());
                 driver2.setMobileNo(driver.getMobileNo());
+                
                 Driver changedriv = driverRepo.save(driver2);
                 return new ResponseEntity<>("imebadilika",HttpStatus.OK);
             }else{

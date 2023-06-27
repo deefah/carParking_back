@@ -80,15 +80,13 @@ public class CarApi {
         }
     }
 
-  
+     
     @PutMapping("/update/{id}")
 
     public ResponseEntity<?>updatecar(@PathVariable int id, @RequestBody Car car){
         try{
             if (carRepo.findById(id).isPresent()){
 
-                
-                
                 Car car2 = carRepo.save(car);
                 
                 // car2.setPlateNo(car.getPlateNo());
