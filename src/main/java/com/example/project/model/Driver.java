@@ -24,7 +24,7 @@ public class Driver {
     public int driverID;
     public String firstName;
     public String lastName;
-    public int mobileNo;
+    public String mobileNo;
 
 
     @ManyToOne
